@@ -46,3 +46,8 @@ def musical(s):
 
 # 自定义过滤器(filter)
 # app.template_filter(name=musical)
+
+
+@app.route('/base')
+def base():
+	return render_template('base.html')
