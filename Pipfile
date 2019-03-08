@@ -1,0 +1,28 @@
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+watchdog = "*"
+pylint = "*"
+
+[packages]
+python-dotenv = "*"
+flask-sqlalchemy = "*"
+flask-mail = "*"
+sendgrid = "*"
+flask-migrate = "*"
+flask-caching = "*"
+flask-assets = "*"
+flask = "*"
+flask-debugtoolbar = "*"
+cssmin = "*"
+jsmin = "*"
+redis = "*"
+flask-dropzone = "*"
+flask-wtf = "*"
+flask-ckeditor = "*"
+sendmail = "*"
+sqlalchemy = "*"
+pylint-flask = "*"

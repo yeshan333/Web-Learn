@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import qux %}
+
+{% block content %}
+{% set name='baz' %}
+<h1>Template</h1>
+<ul>
+	<li><a href="{{ url_for('watchlist') }}">Watchlist</a></li>
+	<li>Filter: {{ foo|musical }}</li>
+	<li>Global: {{ bar() }}</li>
+	<li>Test: {% if name == 'baz' %}I am baz.{% endif %}</li>
+	<li>Macro: {{ qux(amount=5) }}</li>
+</ul>
+{# 使用super()函数向基模板base.html中追加样式 #}
+{% block styles %}
+{{ super() }}
+<style>
+    html{
+        color: red;
+    }
+</style>
+{% endblock %}
+{% endblock content %}
