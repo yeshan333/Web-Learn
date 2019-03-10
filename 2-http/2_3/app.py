@@ -9,6 +9,9 @@ import os
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'secret string')
 
+# 操控session和操控字典差不多
+# app.config['SECRET_KEY'] = os.urandom(24) # 随机生成24位的SECRET_KEY
+
 # 登陆
 @app.route('/login')
 def login():
