@@ -14,7 +14,7 @@ app.secret_key = os.getenv('SECRET_KEY', 'secret string')
 
 # sessiond的过期时间说明
 ## 默认过期时间为浏览器关闭后，通过session.permanent = True设置过期时间为一个月
-### 通过app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7) 可自由设置过期时间
+### 通过app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=7) 可自由设置过期时间，数据类型为timedelta类型
 
 
 # 登陆
