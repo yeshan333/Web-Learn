@@ -9,8 +9,12 @@ import os
 app = Flask(__name__)
 app.secret_key = os.getenv('SECRET_KEY', 'secret string')
 
-# 操控session和操控字典差不多
-# app.config['SECRET_KEY'] = os.urandom(24) # 随机生成24位的SECRET_KEY
+# 操控session和操控字典差不多，pop方法和clear方法可以清除session，用get方法获取session
+# app.config['SECRET_KEY'] = os.urandom(24) # 随机生成24位的SECRET_KEY，每次重启服务器的时候都不一样，这样就会影响session的解密
+
+# sessiond的过期时间说明
+## 默认过期时间为浏览器关闭后，通过session.permanent = True设置过期时间为一个月
+
 
 # 登陆
 @app.route('/login')
