@@ -166,7 +166,7 @@ class Capital(db.Model):
 ## 多对多关系，使用关联表（association table），关联表由db.Table定义
 ## 关系函数需要设置secondary参数，值为关系表名
 
-association_table = db.Table('association',
+association_table = db.Table('association_table',
                              db.Column('student_id', db.Integer, db.ForeignKey('teacher.id')),
                              db.Column('teacher_id', db.Integer, db.ForeignKey('student.id'))
                              )
