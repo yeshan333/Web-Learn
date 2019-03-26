@@ -1,0 +1,7 @@
+<FilesMatch "\.(ttf|otf|eot|woff|svg)$">
+    <IfModule mod_headers.c>
+      Header set Access-Control-Allow-Orign "*"
+    </IfModule>
+</FilesMatch>
+
+<!-- 确保站点无论使用什么CDN，浏览器都可以正常使用web字体 -->
