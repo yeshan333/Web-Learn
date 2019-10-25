@@ -1,1 +1,4 @@
-<p style='color:red;'>本内容是使用 GET 方法请求的。</p><p style='color:red;'>请求时间：2019-10-25 11:22:29</p>
+<?php
+echo "本内容是使用 GET 方法请求的，";
+echo "现在时间是 " . date("Y-m-d h:i:sa");
+?>
