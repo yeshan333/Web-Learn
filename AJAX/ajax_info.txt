@@ -1,0 +1,2 @@
+﻿<p>Ajax 的全称是 Asynchronous JavaScript and XML（异步的 JavaScript 和 XML），是一种用于创建动态网页的技术。</p>
+<p>Ajax 技术指的是脚本独立向服务器请求数据，拿到数据以后，进行处理并更新网页。</p>

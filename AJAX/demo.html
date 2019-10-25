@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tryrun 1</title>
+</head>
+<body>
+    <div id="view">
+        <p>点击下面的按钮，将 Ajax 请求回来的数据更新在该文本内</p>
+    </div>
+    <button type="button" id="btn">发起 Ajax 请求</button>
+
+    <script>
+        //PS：https://www.w3cschool.cn/ajax/ajax-xmlhttprequest-create.html
+        document.getElementById("btn").onclick = ajaxRequest;
+
+        function ajaxRequest () {
+            //创建XMLHttprequest对象
+            var xhr = new XMLHttpRequest();
+
+            //设置请求类型、请求的文件（文件服务器上的文件，任意类型）、是否处理异步请求
+            xhr.open("GET", "./ajax_info.txt", true);  //https://www.w3cschool.cn/statics/demosource/ajax_info.txt
+            //向服务端发送请求
+            xhr.send();
+            
+            //onreadystatechange用于捕获请求的状态
+            xhr.onreadystatechange = function(){
+                //readyState为 4 时请求已经完成、响应已经就绪
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    //xhr.responseText获得来自服务器的响应
+                    document.getElementById("view").innerHTML = xhr.responseText;
+                }                
+            }
+        }
+    </script>
+</body>
