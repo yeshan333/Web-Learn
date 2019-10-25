@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script>
+var xmlhttp;
+//callback function：cfunc
+//https://www.w3cschool.cn/ajax/ajax-xmlhttprequest-onreadystatechange.html
+function loadXMLDoc(url,cfunc)
+{
+if (window.XMLHttpRequest)
+  {// IE7+, Firefox, Chrome, Opera, Safari 代码
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// IE6, IE5 代码
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=cfunc;
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+
+
+function myFunction()
+{
+loadXMLDoc("./ajax_info.txt",function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    }
+  });
+}
+</script>
+</head>
+<body>
+
+<div id="myDiv"><h2>使用 AJAX 修改文本内容</h2></div>
+<button type="button" onclick="myFunction()">修改内容</button>
+
+</body>
+</html>
