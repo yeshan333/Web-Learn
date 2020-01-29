@@ -1,3 +1,7 @@
+//history对象
+//match对象
+//location对象
+
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -44,6 +48,7 @@ const fakeAuth = {
   }
 };
 
+//withRouter can let we trace history & match object
 const AuthButton = withRouter(
   ({ history }) =>
     fakeAuth.isAuthenticated ? (
@@ -51,6 +56,7 @@ const AuthButton = withRouter(
         Welcome!{" "}
         <button
           onClick={() => {
+            //https://github.com/ReactTraining/history/blob/master/docs/GettingStarted.md
             fakeAuth.signout(() => history.push("/"));
           }}
         >
